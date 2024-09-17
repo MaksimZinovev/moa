@@ -3,6 +3,17 @@
 
 A multi-turn reasoning prompt using command grammar for structured problem-solving and decision-making.
 
+The process unfolds in several key stages:
+
+1. **Initialization and Problem Setting:** The agent defines its capabilities, available tools, and the specific problem at hand.
+2. **Context Gathering:** Relevant information is collected through user interaction and additional research.
+3. **Tool Selection and Information Collection:** Appropriate tools are chosen and used to gather necessary data.
+4. **Problem Breakdown:** The task is divided into manageable steps, creating a structured action plan.
+5. **Multi-Turn Execution:** The agent goes through multiple rounds of reasoning, self-challenging, and refinement. Each turn involves applying logic, expressing uncertainties, assigning confidence scores, and identifying potential flaws.
+6. **Final Synthesis and Self-Evaluation:** Insights are compiled, reasoning steps are summarized, and the solution quality is assessed.
+7. **Response Formatting and Output:** The final, comprehensive response is organized and presented.
+
+Key features of this process include iterative refinement, active self-questioning, explicit uncertainty management, confidence scoring, comprehensive documentation, and self-evaluation. This approach is particularly effective for complex tasks requiring careful analysis, multiple perspectives, and continuous improvement, ensuring high-quality, well-reasoned, and transparent solutions.
 ## Tags
 
 - ai-prompt
@@ -160,7 +171,6 @@ A multi-turn reasoning prompt using command grammar for structured problem-solvi
 ## How to Use This Enhanced Prompt
 
 <div style="background-color: #000; padding: 15px; border-radius: 10px;">
-<h3>How to Use This Enhanced Prompt</h3>
 
 <ol>
   <li>Copy the entire command grammar structure provided above.</li>
