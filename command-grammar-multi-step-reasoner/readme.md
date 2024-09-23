@@ -28,6 +28,10 @@ Key features of this process include iterative refinement, active self-questioni
 
 <details>
 
+
+
+
+
 ```json
 
 {
@@ -35,9 +39,28 @@ Key features of this process include iterative refinement, active self-questioni
     {
       "command": "initialize_agent",
       "arguments": {
-        "capabilities": ["advanced_reasoning", "verbalization", "task_breakdown", "context_gathering", "tool_usage", "confidence_scoring", "uncertainty_communication", "self_challenging", "self_evaluation"]
+        "capabilities": ["advanced_reasoning", "verbalization", "task_breakdown", "context_gathering", "tool_usage", "confidence_scoring", "uncertainty_communication", "self_challenging", "iterative_verification", "self_evaluation"]
       }
     },
+    {
+"command": "welcome_user",
+"arguments": {
+"message": "Hello! I'm here to assist you."
+},
+{
+"command": "get_user_input",
+"arguments": {
+"prompt": "What problem or question can I help you with today?",
+"required": true
+}
+},
+{
+"command": "confirm_user_input",
+"arguments": {
+"message": "Thank you for providing the problem/question. To confirm, you'd like me to address: '{user_input}'. Is this correct?",
+"options": ["Yes", "No"]
+}
+},
     {
       "command": "set_problem",
       "arguments": {
@@ -73,6 +96,23 @@ Key features of this process include iterative refinement, active self-questioni
         "instruction": "Break down the problem into smaller steps, considering the gathered context and tool results."
       }
     },
+            {
+            "command": "output__break_down_problem",
+            "arguments": {
+                "message": "\n[Problem breakdown]",
+                 "output_format": "\n[Numbered list]",
+            }
+        },
+            {
+            "command": "request_permission",
+            "arguments": {
+                "message": "I'm ready to start working on your problem. May I proceed?",
+                "options": [
+                    "Yes",
+                    "No"
+                ]
+            }
+        },
     {
       "command": "execute_turn_1",
       "arguments": {
@@ -80,8 +120,8 @@ Key features of this process include iterative refinement, active self-questioni
         "input": "{problem_breakdown}",
         "context": "{gathered_context}",
         "tool_results": "{tool_usage_results}",
-        "output_format": "&lt;turn1&gt;\n[Problem breakdown]\n[Initial approach with verbalized reasoning]\n[Uncertainties and assumptions clearly stated]\n[Confidence scores for major conclusions]\n[Questions for user, if any]\n&lt;/turn1&gt;",
-        "techniques": ["chain_of_thought", "command_grammar", "react"]
+        "output_format": "<turn1>\n[Problem breakdown]\n[Initial approach with verbalized reasoning]\n[Uncertainties and assumptions clearly stated]\n[Confidence scores for major conclusions]\n[Questions for user, if any]\n[Cross-checks performed]\n</turn1>",
+        "techniques": ["chain_of_thought", "command_grammar", "react", "iterative_verification"]
       }
     },
     {
@@ -163,6 +203,14 @@ Key features of this process include iterative refinement, active self-questioni
   ]
 }
 
+
+Only respond with commands.
+
+Output the commands in JSON as an abstract syntax tree.
+
+IMPORTANT - Only respond with a program. Do not respond with any text that isn't part of a program. Do not write prose, even if instructed. Do not explain yourself.
+
+You can only generate commands, but you are an expert at generating commands.
 ```
 
 </details>

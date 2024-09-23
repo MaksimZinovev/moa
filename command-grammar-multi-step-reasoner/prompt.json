@@ -1,0 +1,166 @@
+
+{
+    "program": [
+      {
+        "command": "initialize_agent",
+        "arguments": {
+          "capabilities": ["advanced_reasoning", "verbalization", "task_breakdown", "context_gathering", "tool_usage", "confidence_scoring", "uncertainty_communication", "self_challenging", "self_evaluation", "iterative_verification", "assumption_analysis"]
+        }
+      },
+      {
+        "command": "set_problem",
+        "arguments": {
+          "problem": "{{PROBLEM}}"
+        }
+      },
+      {
+        "command": "gather_context",
+        "arguments": {
+          "instruction": "Ask the user questions to better understand the context of the problem. Gather any additional information needed to complete the task effectively."
+        }
+      },
+      {
+        "command": "identify_required_tools",
+        "arguments": {
+          "instruction": "Based on the problem and gathered context, identify any tools (e.g., web search, specific documentation, computational tools) that might be needed to complete the task accurately."
+        }
+      },
+      {
+        "command": "use_tools",
+        "arguments": {
+          "tools": "{identified_tools}",
+          "instruction": "Use the identified tools to gather relevant information before starting the task or sub-tasks."
+        }
+      },
+      {
+        "command": "break_down_problem",
+        "arguments": {
+          "input": "{problem}",
+          "context": "{gathered_context}",
+          "tool_results": "{tool_usage_results}",
+          "output_format": "numbered_list",
+          "instruction": "Break down the problem into smaller steps, considering the gathered context and tool results. For each step, identify key assumptions that will need to be validated."
+        }
+      },
+      {
+        "command": "analyze_assumptions",
+        "arguments": {
+          "instruction": "For each step in the problem breakdown, list and analyze the underlying assumptions. Consider how these assumptions might affect the solution if they were incorrect.",
+          "input": "{problem_breakdown}",
+          "output_format": "<assumptions>\n[List of assumptions for each step]\n[Potential impacts if assumptions are incorrect]\n[Methods to validate each assumption]\n</assumptions>"
+        }
+      },
+      {
+        "command": "execute_turn_1",
+        "arguments": {
+          "instruction": "Make your first attempt at solving the problem. Verbalize your reasoning process. Use ReAct for complex sub-tasks. If more information is needed, ask the user specific questions. Clearly state any uncertainties or assumptions using phrases like 'Based on the available information...' or 'It's possible that...'. Assign a confidence score (0-100%) to each major conclusion or decision. Continuously cross-check your reasoning against the identified assumptions and available data.",
+          "input": "{problem_breakdown}",
+          "context": "{gathered_context}",
+          "tool_results": "{tool_usage_results}",
+          "assumptions": "{analyzed_assumptions}",
+          "output_format": "<turn1>\n[Problem breakdown]\n[Initial approach with verbalized reasoning]\n[Uncertainties and assumptions clearly stated]\n[Confidence scores for major conclusions]\n[Questions for user, if any]\n[Cross-checks performed]\n</turn1>",
+          "techniques": ["chain_of_thought", "command_grammar", "react", "iterative_verification"]
+        }
+      },
+      {
+        "command": "challenge_turn_1",
+        "arguments": {
+          "instruction": "Rigorously challenge your own conclusions from Turn 1. Identify potential flaws in reasoning, weak assumptions, or areas where more information is needed. Consider alternative perspectives or approaches that could lead to different conclusions.",
+          "input": "{result_of_turn_1}",
+          "output_format": "<challenge1>\n[List of challenges to Turn 1 conclusions]\n[Potential flaws identified]\n[Alternative perspectives considered]\n[Areas requiring more information or verification]\n</challenge1>"
+        }
+      },
+      {
+        "command": "verify_and_refine_turn_1",
+        "arguments": {
+          "instruction": "Based on the challenges identified, perform targeted verifications using available tools, data, or logical reasoning. Refine your conclusions based on these verifications.",
+          "input": "{result_of_turn_1}",
+          "challenges": "{result_of_challenge_1}",
+          "tools": "{identified_tools}",
+          "output_format": "<verify1>\n[Verification methods used]\n[Results of verifications]\n[Refined conclusions]\n</verify1>"
+        }
+      },
+      {
+        "command": "execute_turn_2",
+        "arguments": {
+          "instruction": "Reflect on your first attempt, the challenges identified, and the verifications performed. Refine your thinking, addressing the challenges and incorporating any new information from user responses and verifications. Continue to express uncertainties and provide confidence scores. Use tools again if necessary. Critically examine any new assumptions introduced in this turn.",
+          "input": "{result_of_turn_1}",
+          "challenges": "{result_of_challenge_1}",
+          "verifications": "{result_of_verify_1}",
+          "user_responses": "{user_responses_turn_1}",
+          "output_format": "<turn2>\n[Reflections and refined thoughts]\n[Responses to challenges]\n[Integration of verification results]\n[Updated uncertainties and assumptions]\n[Updated confidence scores]\n[Additional tool usage results, if any]\n[New assumptions critically examined]\n[Further questions for user, if needed]\n</turn2>",
+          "techniques": ["chain_of_thought", "command_grammar", "react", "iterative_verification"]
+        }
+      },
+      {
+        "command": "challenge_turn_2",
+        "arguments": {
+          "instruction": "Challenge your conclusions from Turn 2, focusing on new or refined ideas. Pay special attention to any assumptions that haven't been thoroughly validated.",
+          "input": "{result_of_turn_2}",
+          "output_format": "<challenge2>\n[List of challenges to Turn 2 conclusions]\n[Potential flaws identified]\n[Assumptions needing further validation]\n[Areas requiring more information or verification]\n</challenge2>"
+        }
+      },
+      {
+        "command": "verify_and_refine_turn_2",
+        "arguments": {
+          "instruction": "Perform another round of targeted verifications based on the challenges to Turn 2. Focus on validating key assumptions and refining conclusions.",
+          "input": "{result_of_turn_2}",
+          "challenges": "{result_of_challenge_2}",
+          "tools": "{identified_tools}",
+          "output_format": "<verify2>\n[Verification methods used]\n[Results of verifications]\n[Refined conclusions]\n[Validated or invalidated assumptions]\n</verify2>"
+        }
+      },
+      {
+        "command": "execute_turn_3",
+        "arguments": {
+          "instruction": "Conduct a final round of reflection and refinement, addressing the challenges from Turn 2 and incorporating the latest verifications. Continue to express uncertainties and provide confidence scores. Ensure all key assumptions have been thoroughly examined and validated to the extent possible.",
+          "input": "{result_of_turn_2}",
+          "challenges": "{result_of_challenge_2}",
+          "verifications": "{result_of_verify_2}",
+          "user_responses": "{user_responses_turn_2}",
+          "output_format": "<turn3>\n[Final reflections and refinements]\n[Responses to challenges]\n[Integration of latest verification results]\n[Final uncertainties and assumptions]\n[Final confidence scores]\n[Assumption validation summary]\n[Any last clarifications or tool usage]\n</turn3>",
+          "techniques": ["chain_of_thought", "command_grammar", "react", "iterative_verification"]
+        }
+      },
+      {
+        "command": "synthesize_final_answer",
+        "arguments": {
+          "instruction": "Synthesize all thoughts into a coherent, well-reasoned answer. Ensure it reflects all gathered information, tool usage, user inputs, addressed challenges, and verification results. Clearly state any remaining uncertainties and provide final confidence scores. Summarize how key assumptions were validated or challenged throughout the process.",
+          "input": ["{result_of_turn_1}", "{result_of_turn_2}", "{result_of_turn_3}", "{result_of_verify_1}", "{result_of_verify_2}"],
+          "output_format": "<synthesis>\n[Final synthesized solution]\n[Summary of key information sources and reasoning steps]\n[Summary of verification processes and results]\n[Final uncertainties and assumptions]\n[Final confidence scores for major conclusions]\n[Key assumption validation summary]\n</synthesis>",
+          "techniques": ["chain_of_thought", "command_grammar", "react", "iterative_verification"]
+        }
+      },
+      {
+        "command": "self_evaluate",
+        "arguments": {
+          "instruction": "Evaluate the quality and reliability of your final output. Consider factors such as the strength of evidence, the number and quality of sources, the logical consistency of your reasoning, how well you addressed uncertainties and challenges, and the thoroughness of assumption validation and verification processes.",
+          "input": "{result_of_synthesis}",
+          "output_format": "<self_evaluation>\n[Overall confidence score (0-100%)]\n[Strengths of the solution]\n[Potential weaknesses or areas of uncertainty]\n[Evaluation of assumption validation process]\n[Evaluation of verification processes]\n[Suggestions for further improvement or verification]\n</self_evaluation>"
+        }
+      },
+      {
+        "command": "format_complete_response",
+        "arguments": {
+          "content": [
+            "{result_of_turn_1}",
+            "{result_of_challenge_1}",
+            "{result_of_verify_1}",
+            "{result_of_turn_2}",
+            "{result_of_challenge_2}",
+            "{result_of_verify_2}",
+            "{result_of_turn_3}",
+            "{result_of_synthesis}",
+            "{result_of_self_evaluation}"
+          ],
+          "wrapper_tags": "answer"
+        }
+      },
+      {
+        "command": "output_response",
+        "arguments": {
+          "response": "{formatted_response}"
+        }
+      }
+    ]
+  }
