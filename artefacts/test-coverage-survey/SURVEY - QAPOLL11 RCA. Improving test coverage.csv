@@ -1,0 +1,57 @@
+Id,Start time,Completion time,Email,Name,"Lack of clear process, standard
+
+Do think you do not have a clear process and standard to follow to help you ensure good test coverage? 
+For example, where and when you should start, when finish and w","Any other suggestions for previous question, please describe
+Optional question.","Lack of collaboration
+
+For example, reporter, tester and assignee can talk in a meeting and generate test ideas together to improve test coverage.
+Another example,  reporter, tester and assignee can c","Any other suggestions for previous question, please describe
+Optional question.1","Lack of knowledge. 
+
+For example, 
+Do you know how to use test design techniques that can be applied to improve test coverage?
+state transition testing
+boundary value analysis 
+use case testing 
+explo","Any other suggestions for previous question, please describe
+Optional question.2","Lack of time
+
+Do you think you do NOT have time and ability to prioritize better test coverage when needed? .I do not have time to ensure better test coverage","Any other suggestions for previous question, please describe
+Optional question.3","Lack of discipline
+
+Do you think you should be more disciplined and mindful to improve test coverage?.I lack discipline needed to improve test coverage","Any other suggestions for previous question, please describe
+Optional question.4","Lack of proper tools
+
+Do you think you do NOT have tools or training how to use them which negatively impacts test coverage?
+
+Some examples: note taking tools, mindmaps, Excel spreadsheets, image, vid","Any other suggestions for previous question, please describe.
+Optional question.
+","Not a responsibility of developer, BA?
+
+Do you think that it is not responsibility of developer, BA to perform testing that covers not only main ""happy path"" scenarios but also wide variety of edge ca","Any other suggestions for previous question, please describe.
+Optional question.
+1","How often do you explore the product/feature, think about edge cases during design and testing?.In most cases I explore the product/feature, think about edge cases","Any other suggestions for previous question, please describe.
+Optional question.
+2","Is it a good idea to pair developer/assignee with tester (have discussions, live testing, review each other's testing ideas) to learn from each other and improve test coverage?  
+
+This does not mean p","Any other suggestions for previous question, please describe.
+Optional question.
+3","Organization culture
+
+
+Emphasis on Quality from Leadership
+Leadership consistently communicates the importance of quality
+Quality goals are included in the company's mission
+Collaborative Environment
+","Any other suggestions for previous question, please describe.
+Optional question.
+4","Rate yourself in ""Ensure good test coverage"" "
+1,26/09/2024 17:16,26/09/2024 17:19,anonymous,,Agree,,Strongly agree,,Neither agree nor disagree,,Neither agree nor disagree,,Disagree,,Agree,,Agree,,Neither agree nor disagree,,Agree,,Agree,,4
+2,26/09/2024 17:25,26/09/2024 17:27,anonymous,,Strongly agree,,Strongly agree,,Strongly disagree,,Strongly disagree,,Strongly disagree,,Strongly disagree,,Strongly disagree,,Strongly agree,,Neither agree nor disagree,,Strongly agree,,5
+3,26/09/2024 18:14,26/09/2024 18:19,anonymous,,Agree,,Agree,,Strongly agree,,Strongly agree,,Disagree,,Agree,,Disagree,,Disagree,,Agree,,Neither agree nor disagree,,2
+4,26/09/2024 19:04,26/09/2024 19:09,anonymous,,Neither agree nor disagree,,Agree,,Agree,,Neither agree nor disagree,,Disagree,,Neither agree nor disagree,,Disagree,,Disagree,,Agree,,Neither agree nor disagree,,1
+5,27/09/2024 1:12,27/09/2024 1:16,anonymous,,Agree,,Strongly disagree,,Agree,,Strongly agree,,Agree,,Agree,,Strongly agree,,Agree,,Agree,,Agree,,4
+6,27/09/2024 8:36,27/09/2024 8:45,anonymous,,Neither agree nor disagree,,Disagree,,Disagree,,Agree,,Strongly disagree,,Neither agree nor disagree,,Disagree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,4
+7,27/09/2024 10:08,27/09/2024 10:10,anonymous,,Agree,,Agree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,Neither agree nor disagree,,3
+8,27/09/2024 12:42,27/09/2024 13:03,anonymous,,Disagree,"process is pretty simple, as you test when complete? standard.. well it's bit of question. ie. how far do we test. but should think about all possibilities of -ve/+ve scenarios.",Disagree,"it really depends if all parties are at same page in terms of requirements and design. then test cases do not need to be shared, in fact, IMO it's better not to be shared, hence we don't fall into the trap of duplicating same test cases or limiting ourselves in fixed coverage.",Agree,"somewhat agree. but because BA and Developers are not known to be a profound tester, hence not sure if we are expected to know all test techniques. but certainly good to know. and we've been through some in workshops.",Strongly agree,"it's always challenge more/wider-testing vs delivery-on-time. we can't spend forever to test every possible scenarios but at the same time, we don't want to compromise satisfactory testing scope. also, often get pressured to complete current work as next work is chasing. ",Agree,"it's probably culture or habitual thing going for long in our work practice or life. eg. only test +ve cases, less worry about -ve cases, very narrow view of testing scope, etc.",Strongly disagree,"thought we tried new&old&modern&tranditional tools for last couple of years. oh.. one thing we are in process is testing automation.. but for our testing, tools are good-to-have item, not blocker to our testing. ",Strongly disagree,"but I know there's certainly is somewhat culture in Figtree. also, it relates back to Q1, who test what at when. ",Strongly agree,always at my best..,Disagree,only if it requires comprehensive testing. eg. for large complex changes or major new feature like file encryption at rest. ,Agree,,3
+9,30/09/2024 9:00,30/09/2024 9:20,anonymous,,Neither agree nor disagree,,Agree,,Agree,,Agree,,Strongly disagree,,Agree,,Agree,,Neither agree nor disagree,,Neither agree nor disagree,,Disagree,,4

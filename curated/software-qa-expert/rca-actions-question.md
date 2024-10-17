@@ -1,0 +1,1 @@
+Summary: Improve test coverage of manual testing. Define and share the standard that explains the process: who, when, how. Use RCA to address most common root-causes of defects (e.g., acceptance criteria was incomplete or not tested, negative scenarios were not tested, regression testing was insufficient, edge cases and related areas, functionality were not covered by testing)
