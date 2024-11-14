@@ -63,9 +63,9 @@ Too Big, Too Small, Just Right
 
 Violate constraints (leave required fields blank, enter invalid combinations in dependent fields, enter duplicate IDs or names). Apply with the Input Method heuristic.
 
-Figtree example: Claim can have various statuses. Try moving status forward, backward. Try moving claim backward when claim state (e.g. payments are made) should not allow this operation
+Example: Claim can have various statuses. Try moving status forward, backward. Try moving claim backward when claim state (e.g. payments are made) should not allow this operation
 
-3. INPUT FIELDS TESTING HEURISTICS
+1. INPUT FIELDS TESTING HEURISTICS
 
 Non-ASCII characters (could be Swedish characters, Russian characters)
 Copy/paste
